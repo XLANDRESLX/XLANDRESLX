@@ -1,0 +1,1 @@
+{"name":"portafolio","private":true,"scripts":{"build":"tailwindcss -c tailwind.config.js -i input.css -o ../docs/styles.css --minify"},"devDependencies":{"tailwindcss":"3.4.17"}}

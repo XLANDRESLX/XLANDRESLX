@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" width="100%" role="img" aria-label="Andrés Echeverría — Desarrollo web e infraestructura TI">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B1820"/><stop offset="1" stop-color="#14262F"/></linearGradient>
+<path id="p1" d="M640 120 H720 V60 H800 V120 H900"/>
+<path id="p2" d="M640 120 H720 V180 H800 V120"/>
+<path id="p3" d="M720 60 V30 H940"/>
+</defs>
+<style>
+text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.n{fill:#111C24;stroke:#2B4756;stroke-width:2}
+.l{fill:none;stroke:#2B4756;stroke-width:2}
+.t{font-size:12px;fill:#7FA3B5;text-anchor:middle}
+@media (prefers-reduced-motion:reduce){animate,animateMotion{display:none}}
+</style>
+<rect width="1000" height="240" fill="url(#bg)"/>
+<g class="l"><use href="#p1"/><use href="#p2"/><use href="#p3"/></g>
+<g class="n"><rect x="610" y="100" width="40" height="40" rx="8"/><rect x="700" y="40" width="40" height="40" rx="8"/><rect x="780" y="100" width="40" height="40" rx="8"/><rect x="780" y="160" width="40" height="40" rx="8"/><rect x="880" y="100" width="40" height="40" rx="8"/><rect x="920" y="10" width="40" height="40" rx="8"/></g>
+<g class="t"><text x="630" y="160">router</text><text x="720" y="100">switch</text><text x="800" y="220">rack</text><text x="900" y="160">PC</text><text x="940" y="68">CCTV</text></g>
+<g fill="#F59E0B"><circle r="5"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle>
+<circle r="5" fill="#38BDF8"><animateMotion dur="3.2s" begin="1s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion></circle>
+<circle r="5"><animateMotion dur="3.6s" begin="0.5s" repeatCount="indefinite"><mpath href="#p3"/></animateMotion></circle></g>
+<text x="48" y="100" font-size="46" font-weight="700" fill="#F2F6F8" font-family="ui-sans-serif,system-ui,Segoe UI,Arial,sans-serif">Andrés Echeverría</text>
+<text x="50" y="140" font-size="18" fill="#38BDF8">Desarrollo web con PHP + Infraestructura TI</text>
+<text x="50" y="172" font-size="14" fill="#7FA3B5">Redes LAN · Linux · CCTV · Ciénaga, Magdalena</text>
+<rect x="50" y="190" width="120" height="4" rx="2" fill="#F59E0B"><animate attributeName="width" values="40;240;40" dur="6s" repeatCount="indefinite"/></rect>
+</svg>

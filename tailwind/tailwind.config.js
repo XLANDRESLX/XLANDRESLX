@@ -1,0 +1,1 @@
+module.exports={content:["../docs/index.html"],theme:{extend:{colors:{ink:"#0B1820",panel:"#111C24",line:"#22343F",cable:"#F59E0B",sky:"#38BDF8",mist:"#7FA3B5"},fontFamily:{mono:["ui-monospace","SFMono-Regular","Menlo","Consolas","monospace"]}}},plugins:[]}

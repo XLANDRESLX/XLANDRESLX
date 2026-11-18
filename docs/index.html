@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Andrés Echeverría · Desarrollo web e infraestructura TI</title>
+<meta name="description" content="Portafolio de Andrés José Echeverria Rada: sistemas web a medida con PHP, redes LAN, Linux y CCTV.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-ink text-slate-200 font-sans antialiased">
+<header class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
+  <a href="#inicio" class="font-mono text-sky focus:outline-none focus-visible:ring-2 focus-visible:ring-cable">xlandreslx</a>
+  <nav class="flex gap-6 text-sm text-mist">
+    <a class="hover:text-white focus-visible:text-white" href="#proyectos">Proyectos</a>
+    <a class="hover:text-white focus-visible:text-white" href="#infraestructura">Infraestructura</a>
+    <a class="hover:text-white focus-visible:text-white" href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main>
+<section id="inicio" class="mx-auto grid max-w-5xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:py-24">
+  <div>
+    <p class="font-mono text-sm text-sky">Ciénaga, Magdalena · Colombia</p>
+    <h1 class="mt-3 text-4xl font-bold leading-tight text-white md:text-5xl">Programo sistemas web y dejo la red funcionando.</h1>
+    <p class="mt-5 max-w-md text-mist">Soy Andrés Echeverria, tecnólogo en Gestión de Sistemas Informáticos y estudiante de Ingeniería Informática en UNICARIBE. Hago software a medida con PHP y me encargo de redes LAN, servidores Linux y cámaras CCTV.</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#proyectos" class="rounded-lg bg-cable px-5 py-3 font-semibold text-ink transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Ver proyectos</a>
+      <a href="https://" class="rounded-lg border border-line px-5 py-3 text-white transition hover:border-sky focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky">Escribir por WhatsApp</a>
+    </div>
+  </div>
+  <div class="rounded-2xl border border-line bg-panel p-6" aria-hidden="true">
+    <svg viewBox="0 0 360 120" class="w-full" role="img" aria-label="Diagrama: router, switch y rack conectados">
+      <path id="ruta" d="M30 30 H170 V90 H330" fill="none" stroke="#22343F" stroke-width="3"/>
+      <g fill="#111C24" stroke="#2B4756" stroke-width="2"><rect x="14" y="14" width="32" height="32" rx="7"/><rect x="154" y="74" width="32" height="32" rx="7"/><rect x="314" y="74" width="32" height="32" rx="7"/></g>
+      <g font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#7FA3B5" text-anchor="middle"><text x="30" y="62">router</text><text x="170" y="64">switch</text><text x="330" y="122">rack</text></g>
+      <circle r="5" fill="#F59E0B"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#ruta"/></animateMotion></circle>
+    </svg>
+    <p class="mt-4 font-mono text-xs text-mist">Cada paquete que ves viaja del router al rack. Mi trabajo es que llegue siempre.</p>
+  </div>
+</section>
+
+<section id="proyectos" class="mx-auto max-w-5xl px-6 py-16">
+  <h2 class="text-2xl font-bold text-white">Proyectos de software</h2>
+  <div class="mt-8 grid gap-6 md:grid-cols-5">
+    <article class="rounded-2xl border border-line bg-panel p-7 md:col-span-3">
+      <h3 class="text-xl font-semibold text-white">Vanite · gestión de citas para estilismo</h3>
+      <p class="mt-3 text-mist">Aplicación web que automatiza la agenda, el control de clientes y los servicios de un salón. Redujo los tiempos de respuesta y ordenó la operación diaria.</p>
+      <ul class="mt-5 flex flex-wrap gap-2 font-mono text-xs text-sky"><li class="rounded bg-ink px-2 py-1">PHP nativo</li><li class="rounded bg-ink px-2 py-1">Bootstrap</li><li class="rounded bg-ink px-2 py-1">JavaScript</li></ul>
+    </article>
+    <article class="rounded-2xl border border-line bg-panel p-7 md:col-span-2">
+      <h3 class="text-xl font-semibold text-white">POS e inventario · Distribuidora Reyes</h3>
+      <p class="mt-3 text-mist">Control de existencias, ventas y reportes. La lógica de negocio y la base de datos se optimizaron con herramientas de IA.</p>
+      <ul class="mt-5 flex flex-wrap gap-2 font-mono text-xs text-sky"><li class="rounded bg-ink px-2 py-1">PHP</li><li class="rounded bg-ink px-2 py-1">Base de datos</li><li class="rounded bg-ink px-2 py-1">IA</li></ul>
+    </article>
+  </div>
+</section>
+
+<section id="infraestructura" class="mx-auto max-w-5xl px-6 py-16">
+  <h2 class="text-2xl font-bold text-white">Infraestructura y soporte</h2>
+  <dl class="mt-8 divide-y divide-line border-y border-line">
+    <div class="grid gap-1 py-5 md:grid-cols-4"><dt class="font-semibold text-white">Redes</dt><dd class="text-mist md:col-span-3">Cableado estructurado LAN, montaje y organización de gabinetes rack, canalización física.</dd></div>
+    <div class="grid gap-1 py-5 md:grid-cols-4"><dt class="font-semibold text-white">Sistemas</dt><dd class="text-mist md:col-span-3">Linux (Debian, Linux Mint) y Windows con despliegue y políticas de grupo (GPO).</dd></div>
+    <div class="grid gap-1 py-5 md:grid-cols-4"><dt class="font-semibold text-white">CCTV</dt><dd class="text-mist md:col-span-3">Sistemas analógicos HD, grabadores DVR/NVR Hikvision y Dahua, monitoreo remoto.</dd></div>
+    <div class="grid gap-1 py-5 md:grid-cols-4"><dt class="font-semibold text-white">Soporte</dt><dd class="text-mist md:col-span-3">Mantenimiento preventivo y correctivo de equipos, diagnóstico de fallas y adecuación física.</dd></div>
+  </dl>
+</section>
+
+<section id="contacto" class="mx-auto max-w-5xl px-6 py-16">
+  <h2 class="text-2xl font-bold text-white">Hablemos</h2>
+  <p class="mt-3 max-w-md text-mist">Estoy abierto a proyectos de desarrollo web o infraestructura.</p>
+  <div class="mt-6 flex flex-wrap gap-3 font-mono text-sm">
+    <a class="rounded-lg border border-line px-4 py-2 text-white hover:border-cable focus-visible:outline focus-visible:outline-2 focus-visible:outline-cable" href="mailto:"></a>
+    <a class="rounded-lg border border-line px-4 py-2 text-white hover:border-cable focus-visible:outline focus-visible:outline-2 focus-visible:outline-cable" href="https://"></a>
+    <a class="rounded-lg border border-line px-4 py-2 text-white hover:border-cable focus-visible:outline focus-visible:outline-2 focus-visible:outline-cable" href="https://github.com/XLANDRESLX">github.com/XLANDRESLX</a>
+  </div>
+</section>
+</main>
+<footer class="mx-auto max-w-5xl px-6 py-10 font-mono text-xs text-mist">© Andrés José Echeverria Rada</footer>
+</body>
+</html>
