@@ -1,5 +1,5 @@
 """Genera assets/stats.svg con datos de la API de GitHub (solo GITHUB_TOKEN, sin servicios externos)."""
-import os, json, datetime, urllib.request
+import os, json, datetime, urllib.request, urllib.error
 from html import escape
 USER = os.environ.get("GH_USER", "XLANDRESLX")
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
@@ -16,7 +16,15 @@ def fetch():
         return {"followers":{"totalCount":4},"repositories":{"totalCount":9,"nodes":[{"stargazerCount":3,"languages":{"edges":[L("PHP","#4F5D95",900),L("JavaScript","#f1e05a",500),L("CSS","#563d7c",300),L("HTML","#e34c26",200)]}}]},
                 "contributionsCollection":{"contributionCalendar":{"totalContributions":sum(x["contributionCount"] for x in days),"weeks":weeks}}}
     req=urllib.request.Request("https://api.github.com/graphql",json.dumps({"query":Q,"variables":{"u":USER}}).encode(),{"Authorization":"bearer "+TOKEN})
-    return json.load(urllib.request.urlopen(req))["data"]["user"]
+    try:
+        with urllib.request.urlopen(req) as resp:
+            body=json.load(resp)
+    except urllib.error.HTTPError as e:
+        detail=e.read().decode() if hasattr(e,"read") else str(e)
+        raise RuntimeError(f"GitHub GraphQL falló (HTTP {e.code}): {detail}") from None
+    if "errors" in body or "data" not in body:
+        raise RuntimeError(f"GitHub GraphQL no devolvió datos: {body}")
+    return body["data"]["user"]
 u=fetch(); cal=u["contributionsCollection"]["contributionCalendar"]
 days=[d for w in cal["weeks"] for d in w["contributionDays"]]
 cur=best=run=0
