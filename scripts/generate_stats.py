@@ -4,7 +4,7 @@ from html import escape
 USER = os.environ.get("GH_USER", "XLANDRESLX")
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 Q = """query($u:String!){user(login:$u){followers{totalCount}
-repositories(ownerAffiliation:OWNER,isFork:false,first:100,privacy:PUBLIC){totalCount nodes{stargazerCount languages(first:5,orderBy:{field:SIZE,direction:DESC}){edges{size node{name color}}}}}
+repositories(isFork:false,first:100,privacy:PUBLIC){totalCount nodes{stargazerCount languages(first:5,orderBy:{field:SIZE,direction:DESC}){edges{size node{name color}}}}}
 contributionsCollection{contributionCalendar{totalContributions weeks{contributionDays{contributionCount date}}}}}}"""
 def fetch():
     if os.environ.get("MOCK"):
