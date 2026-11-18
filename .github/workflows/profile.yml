@@ -19,7 +19,7 @@ jobs:
 
       - name: Generar estadísticas (SVG propio)
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USER: ${{ github.repository_owner }}
         run: python3 scripts/generate_stats.py
 

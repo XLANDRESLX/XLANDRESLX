@@ -4,7 +4,7 @@ from html import escape
 USER = os.environ.get("GH_USER", "XLANDRESLX")
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 Q = """query($u:String!){user(login:$u){followers{totalCount}
-repositories(isFork:false,first:100){totalCount nodes{isPrivate stargazerCount languages(first:5,orderBy:{field:SIZE,direction:DESC}){edges{size node{name color}}}}}
+repositories(isFork:false,first:100,privacy:PUBLIC){totalCount nodes{stargazerCount languages(first:5,orderBy:{field:SIZE,direction:DESC}){edges{size node{name color}}}}}
 contributionsCollection{contributionCalendar{totalContributions weeks{contributionDays{contributionCount date}}}}}}"""
 def fetch():
     if os.environ.get("MOCK"):
@@ -35,14 +35,13 @@ for d in reversed(days):
     if d["contributionCount"]>0: cur+=1
     elif d is days[-1]: continue
     else: break
-pub=[r for r in u["repositories"]["nodes"] if not r.get("isPrivate", False)]
-stars=sum(r["stargazerCount"] for r in pub)
+stars=sum(r["stargazerCount"] for r in u["repositories"]["nodes"])
 lang={}
 for r in u["repositories"]["nodes"]:
     for e in r["languages"]["edges"]:
         n=e["node"]; x=lang.setdefault(n["name"],[0,n["color"] or "#8B949E"]); x[0]+=e["size"]
 top=sorted(lang.items(),key=lambda kv:-kv[1][0])[:5]; tot=sum(v[0] for _,v in top) or 1
-stats=[("Contribuciones (año)",cal["totalContributions"]),("Racha actual",f"{cur} d"),("Mejor racha",f"{best} d"),("Repos públicos",len(pub)),("Estrellas",stars),("Seguidores",u["followers"]["totalCount"])]
+stats=[("Contribuciones (año)",cal["totalContributions"]),("Racha actual",f"{cur} d"),("Mejor racha",f"{best} d"),("Repos públicos",u["repositories"]["totalCount"]),("Estrellas",stars),("Seguidores",u["followers"]["totalCount"])]
 o=['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="100%" role="img" aria-label="Estadísticas de GitHub"><style>text{font-family:ui-monospace,Menlo,Consolas,monospace;fill:#C9D6DD}.v{font-size:30px;font-weight:700;fill:#F2F6F8}.k{font-size:12px;fill:#7FA3B5}.h{font-size:14px;fill:#38BDF8}</style><rect width="900" height="300" rx="14" fill="#0E1A22" stroke="#22343F"/>']
 for i,(k,v) in enumerate(stats):
     x=40+(i%3)*150; y=60+(i//3)*80
