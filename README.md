@@ -78,7 +78,7 @@ Profesional en Tecnología y Desarrollo de Software con sólida trayectoria en m
 
 ## 📫 Contacto
 
-📧 [](mailto:) · 📱 [](https://)
+
 
 <div align="center">
 
